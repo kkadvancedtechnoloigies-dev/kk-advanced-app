@@ -13,14 +13,18 @@ jobs:
         with:
           node-version: 20
 
-      - name: Setup Expo
+      - name: Setup Expo and EAS
         uses: expo/expo-github-action@v8
         with:
           expo-version: latest
           eas-version: latest
 
-      - name: Build APK on Cloud
-        run: npx eas-cli build --platform android --profile production --non-interactive
+      - name: Build on EAS Cloud
+        uses: expo/expo-github-action@v8/eas-build
+        with:
+          platform: android
+          profile: production
+          non-interactive: true
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
           
