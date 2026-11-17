@@ -19,11 +19,8 @@ jobs:
           expo-version: latest
           eas-version: latest
 
-      - name: Install EAS CLI
-        run: npm install -g eas-cli
-
-      - name: Build with EAS
-        run: eas build --platform android --profile production --non-interactive
+      - name: Build APK on Cloud
+        run: npx eas-cli build --platform android --profile production --non-interactive
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
           
