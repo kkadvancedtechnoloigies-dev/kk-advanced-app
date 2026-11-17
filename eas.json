@@ -13,7 +13,8 @@
     "production": {
       "android": {
         "buildType": "apk",
-        "withoutCredentials": true
+        "withoutCredentials": true,
+        "autoIncrement": true
       }
     }
   },
@@ -21,5 +22,3 @@
     "production": {}
   }
 }
-
-
