@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "joyous-violet-raisins",
-    "slug": "snack-6472a8de-e2c6-4939-beb3-1b603e0ba14b",
+    "name": "KK Advanced Tech",
+    "slug": "kk-advanced-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -16,6 +16,7 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.kkadvancedtech.app",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
