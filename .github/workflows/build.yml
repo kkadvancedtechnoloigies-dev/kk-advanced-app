@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    name: Build Android APK
+    name: Verify Expo Account and Build APK
     runs-on: ubuntu-latest
 
     steps:
@@ -21,16 +21,21 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Check Expo Configuration
-        run: |
-          node -v
-          npx expo config --json
-
       - name: Install EAS CLI
         run: npm install --global eas-cli
 
       - name: Check EAS CLI
         run: eas --version
+
+      - name: Verify Expo Account
+        run: eas whoami
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Verify Expo Project
+        run: eas project:info
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
 
       - name: Build Android APK
         run: eas build --platform android --profile production --non-interactive
