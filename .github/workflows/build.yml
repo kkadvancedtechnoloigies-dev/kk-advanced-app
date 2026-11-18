@@ -10,23 +10,35 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout source code
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Step 2: Setup Node.js 22
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
+      # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install
 
+      # Step 4: Check Expo configuration
+      - name: Check Expo Configuration
+        run: |
+          node -v
+          npx expo config --json
+
+      # Step 5: Install EAS CLI
       - name: Install EAS CLI
         run: npm install --global eas-cli
 
+      # Step 6: Check EAS CLI
       - name: Check EAS CLI
         run: eas --version
 
+      # Step 7: Build Android APK
       - name: Build Android APK
         run: eas build --platform android --profile production --non-interactive
         env:
