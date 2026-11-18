@@ -1,3 +1,4 @@
+
 {
   "expo": {
     "name": "KK Advanced Tech",
@@ -26,13 +27,9 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    
-"extra": {
-  "eas": {
-    "projectId": "8a2f81f8-926b-486d-a064-b1fc978c06a9"
-  }
-}
-    
+    "extra": {
+      "eas": {
+        "projectId": "8a2f81f8-926b-486d-a064-b1fc978c06a9"
       }
     }
   }
